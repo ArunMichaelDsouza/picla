@@ -1,0 +1,30 @@
+{
+  "name": "picla",
+  "version": "0.1.0",
+  "description": "Jquery plugin to add captions or labels to your images ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArunMichaelDsouza/picla.git"
+  },
+  "keywords": [
+    "jquery",
+    "label",
+    "caption",
+    "image"
+  ],
+  "author": "Arun Michael Dsouza <amdsouza92@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArunMichaelDsouza/picla/issues"
+  },
+  "homepage": "https://github.com/ArunMichaelDsouza/picla#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
