@@ -4,6 +4,6 @@
     Licence: MIT
 */
 
-(function($) {
-	
-})(jQuery);
+(function() {
+	console.log($);
+})();
