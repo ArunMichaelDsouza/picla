@@ -1,6 +1,6 @@
 /*
     picla v0.1.0
-    Copyright (c) 2015 Arun Michael Dsouza (amdsouza92@gmail.com)
+    Copyright (c) 2016 Arun Michael Dsouza (amdsouza92@gmail.com)
     Licence: MIT
 */
 
@@ -13,19 +13,47 @@
 	for(var i=0; i<elements.length; i++) {
 
 		var imgElement = elements[i], // Get current image element
-			imgElementAltText = imgElement.alt, // Get alt text of current image element
-			displayStyle = window.getComputedStyle(imgElement).display; // Get display style of current image element
+			imgElementAltText = imgElement.alt; // Get alt text of current image element
+			imgElementWidth = window.getComputedStyle(imgElement).width; // Get width of current image element
 
+		// Get class list of element
+		var classList = $(imgElement).attr('class').split(/\s+/);
+
+		// Remove class 'picla' from the class list
+		classList = jQuery.grep(classList, function(value) {
+			return value != 'picla';
+		});
+
+		// Generate class string to be added to rendered image element
+		var classString = '';
+		for(var i=0; i<classList.length; i++) {
+			classString += ' '+classList[i];
+		}
+
+		// Get parent element of current image element
 		var parent = imgElement.parentElement;
 
+		// Create wrapper for image element to be rendered
 		var wrapper = document.createElement('div');
-		wrapper.style.display = displayStyle;
 
+		// Add default CSS to wrapper
+		$(wrapper).css({
+			'display': 'inline-block',
+			'width': imgElementWidth
+		});	
+
+		// Create image element to be rendered
 		var img = document.createElement('img');
-		img.src = imgElement.src;
 
+		// Initialise rendered image element
+		img.src = imgElement.src;
+		$(img).css('width', '100%');
+		$(img).addClass(classString);
+
+		// Append it to wrapper
 		wrapper.appendChild(img);
 
+		// Replace original image element with wrapper
 		parent.replaceChild(wrapper, imgElement);
 
 	}
