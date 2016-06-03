@@ -76,12 +76,18 @@
         	'width': '100%',
         	'box-sizing': 'border-box'
         })
-        $(label).text(imgElement.altText);
+        $(label).html(imgElement.altText);
 
-        // Check for picla attributes
+        // Check for label class attribute
         var labelClass = $(imgElement.elem).attr('data-label-class');
         if(labelClass !== '') {
         	$(label).addClass(labelClass);
+        }
+
+        // Check for wrapper class attribute
+        var wrapperClass = $(imgElement.elem).attr('data-wrapper-class');
+        if(wrapperClass !== '') {
+        	$(wrapper).addClass(wrapperClass);
         }
 
         // Create image element to be rendered
@@ -89,7 +95,29 @@
 
         // Initialise rendered image element
         img.src = imgElement.getSrc();
-        $(img).css('width', '100%');
+        $(img).css({
+        	'width': '100%',
+        	'margin': 0,
+        	'padding': 0
+        });
+
+        // Check for label hover attribute
+        var labelHover = $(imgElement.elem).attr('data-label-hover');
+        if(labelHover !== undefined) {
+        	var duration = '.2s';
+        	$(label).css({
+        		'bottom': '-20%',
+        		'transition': 'all '+duration+' ease-in-out'
+        	});
+
+        	// Hide/show label on mouseover event
+        	$(wrapper).mouseover(function() {
+        		$(label).css('bottom', '0');
+        	});
+        	$(wrapper).mouseout(function() {
+        		$(label).css('bottom', '-20%');
+        	});
+        }
 
         // Append generated image and label to wrapper
         wrapper.appendChild(img);
