@@ -6,55 +6,84 @@
 
 (function() {
 
-	// Get all image elements with class of 'picla'
-	var elements = $('img.picla');
+	"use strict";
 
-	// Loop through all those elements and convert to label wrapper
-	for(var i=0; i<elements.length; i++) {
+    // Constructor function to create image element 
+    function ImageElement(elem, altText, width) {
+        this.elem = elem; // Current image element
+        this.altText = altText; // Element's alt text
+        this.width = width; // Element's width
+    }
 
-		var imgElement = elements[i], // Get current image element
-			imgElementAltText = imgElement.alt; // Get alt text of current image element
-			imgElementWidth = window.getComputedStyle(imgElement).width; // Get width of current image element
+    // Function to get class string of current image
+    ImageElement.prototype.getClassString = function() {
 
-		// Get class list of element
-		var classList = $(imgElement).attr('class').split(/\s+/);
+        // Get array of classes applied to current element
+        var classList = $(this.elem).attr('class').split(/\s+/);
 
-		// Remove class 'picla' from the class list
-		classList = jQuery.grep(classList, function(value) {
-			return value != 'picla';
-		});
+        // Remove class 'picla' from the array
+        classList = jQuery.grep(classList, function(value) {
+            return value != 'picla';
+        });
 
-		// Generate class string to be added to rendered image element
-		var classString = '';
-		for(var i=0; i<classList.length; i++) {
-			classString += ' '+classList[i];
-		}
+        // Generate class string for current image
+        var classString = '';
+        for (var i = 0; i < classList.length; i++) {
+            classString += ' ' + classList[i];
+        }
 
-		// Get parent element of current image element
-		var parent = imgElement.parentElement;
+        return classString;
+    };
 
-		// Create wrapper for image element to be rendered
-		var wrapper = document.createElement('div');
+    // Function to get source of current image
+    ImageElement.prototype.getSrc = function() {
+        return this.elem.src;
+    };
 
-		// Add default CSS to wrapper
-		$(wrapper).css({
-			'display': 'inline-block',
-			'width': imgElementWidth
-		});	
+    // Function to get parent element of current image
+    ImageElement.prototype.getParent = function() {
+        return this.elem.parentElement;
+    };
 
-		// Create image element to be rendered
-		var img = document.createElement('img');
+    // Get all image elements with class of 'picla'
+    var elements = $('img.picla');
 
-		// Initialise rendered image element
-		img.src = imgElement.src;
-		$(img).css('width', '100%');
-		$(img).addClass(classString);
+    // Function to generate image labels for all image elements
+    function generateImageLabel(imgElement) {
+    	// Get parent element of image element 
+        var parent = imgElement.getParent();
 
-		// Append it to wrapper
-		wrapper.appendChild(img);
+        // Create wrapper for image element to be rendered
+        var wrapper = document.createElement('div');
 
-		// Replace original image element with wrapper
-		parent.replaceChild(wrapper, imgElement);
+        // Add default CSS to wrapper
+        $(wrapper).css({
+            'display': 'inline-block',
+            'width': imgElement.width
+        });
 
-	}
+        // Create image element to be rendered
+        var img = document.createElement('img');
+
+        // Initialise rendered image element
+        img.src = imgElement.getSrc();
+        $(img).css('width', '100%');
+        $(img).addClass(imgElement.getClassString());
+
+        // Append it to wrapper
+        wrapper.appendChild(img);
+
+        // Replace original image element with wrapper
+        parent.replaceChild(wrapper, imgElement.elem);
+    };
+
+    // Loop through all those elements and convert to a wrapper with attached image label
+    for (var i = 0; i < elements.length; i++) {
+
+        // Create new image element
+        var imgElement = new ImageElement(elements[i], elements[i].alt, window.getComputedStyle(elements[i]).width);
+
+        // Genrate image labels for all elements
+     	generateImageLabel(imgElement);
+    }
 })();
