@@ -50,6 +50,7 @@
 
     // Function to generate image labels for all image elements
     function generateImageLabel(imgElement) {
+
     	// Get parent element of image element 
         var parent = imgElement.getParent();
 
@@ -76,6 +77,12 @@
         	'box-sizing': 'border-box'
         })
         $(label).text(imgElement.altText);
+
+        // Check for picla attributes
+        var labelClass = $(imgElement.elem).attr('data-label-class');
+        if(labelClass !== '') {
+        	$(label).addClass(labelClass);
+        }
 
         // Create image element to be rendered
         var img = document.createElement('img');
