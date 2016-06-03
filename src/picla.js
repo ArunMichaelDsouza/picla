@@ -59,8 +59,23 @@
         // Add default CSS to wrapper
         $(wrapper).css({
             'display': 'inline-block',
-            'width': imgElement.width
+            'position': 'relative',
+            'width': imgElement.width,
+            'overflow': 'hidden'
         });
+
+        // Add image element classes to the wrapper
+        $(wrapper).addClass(imgElement.getClassString());
+
+        // Create label element
+        var label = document.createElement('div');
+        $(label).css({
+        	'position': 'absolute',
+        	'bottom': 0,
+        	'width': '100%',
+        	'box-sizing': 'border-box'
+        })
+        $(label).text(imgElement.altText);
 
         // Create image element to be rendered
         var img = document.createElement('img');
@@ -68,10 +83,10 @@
         // Initialise rendered image element
         img.src = imgElement.getSrc();
         $(img).css('width', '100%');
-        $(img).addClass(imgElement.getClassString());
 
-        // Append it to wrapper
+        // Append generated image and label to wrapper
         wrapper.appendChild(img);
+        wrapper.appendChild(label);
 
         // Replace original image element with wrapper
         parent.replaceChild(wrapper, imgElement.elem);
