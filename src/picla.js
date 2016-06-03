@@ -104,7 +104,12 @@
         // Check for label hover attribute
         var labelHover = $(imgElement.elem).attr('data-label-hover');
         if(labelHover !== undefined) {
-        	var duration = '.2s';
+        	var duration = '.2s'; // Set default transition duration
+
+        	if(labelHover !== '') {
+        		duration = labelHover; // Set custom transition duration
+        	}
+
         	$(label).css({
         		'bottom': '-20%',
         		'transition': 'all '+duration+' ease-in-out'
