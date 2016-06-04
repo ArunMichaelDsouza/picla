@@ -62,7 +62,9 @@
             'display': 'inline-block',
             'position': 'relative',
             'width': imgElement.width,
-            'overflow': 'hidden'
+            'overflow': 'hidden',
+            'margin': getComputedStyle(imgElement.elem).margin,
+            'padding': getComputedStyle(imgElement.elem).padding
         });
 
         // Add image element classes to the wrapper
@@ -104,14 +106,14 @@
         // Check for label hover attribute
         var labelHover = $(imgElement.elem).attr('data-label-hover');
         if(labelHover !== undefined) {
-        	var duration = '.2s'; // Set default transition duration
+        	var duration = '.3s'; // Set default transition duration
 
         	if(labelHover !== '') {
         		duration = labelHover; // Set custom transition duration
         	}
 
         	$(label).css({
-        		'bottom': '-20%',
+        		'bottom': '-40%',
         		'transition': 'all '+duration+' ease-in-out'
         	});
 
@@ -120,7 +122,7 @@
         		$(label).css('bottom', '0');
         	});
         	$(wrapper).mouseout(function() {
-        		$(label).css('bottom', '-20%');
+        		$(label).css('bottom', '-40%');
         	});
         }
 

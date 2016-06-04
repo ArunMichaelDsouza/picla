@@ -3,33 +3,73 @@
 <head>
 	<title>Picla demo</title>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 	<style>
-		body {
-			font-family: Helvetica, sans-serif;
-		}
-		img {
-			width: 20%;
+		.container {
+			text-align: center;
 			margin-top: 40px;
 		}
 		.label-class {
 			background-color: rgba(0,0,0,.75);
 			color: #fff;
+			padding: 10px;
 			text-align: center;
-			padding: 8px;
 		}
 		.wrapper-class {
-			border-radius: 10px;
+			border-radius: 20px;
+			box-shadow: 2px 2px 2px rgba(0,0,0,.35);
+		}
+		img {
+			margin-bottom: 20px;
+		}
+		h1 {
+			margin: 20px 0;
+			font-family: 'Pacifico', cursive;
+			font-size: 4.5em;
+			color: #DE535B;
+			text-shadow: 1px 1px 1px #C43730;
+			font-weight: 400;
+		}
+		p {
+			font-weight: 300;
+			color: #999;
+			font-size: 1.5em;
+			margin: 0 0 50px;
+		}
+		p > span {
+			border-bottom: 2px solid #DE535B;
+			color: #DE535B;
+			font-weight: 400;
+			font-size: .95em;
 		}
 	</style>
 </head>
 <body>
-	<img class="picla" data-label-hover data-wrapper-class="wrapper-class" data-label-class="label-class" src="http://www.jqueryscript.net/demo/Animated-jQuery-Image-Caption-On-Hover-Plugin-Capty/img/image.jpg" alt="This is a tree" />
-
-	<!-- <section>
-		<img class="picla" src="https://sustainability.uic.edu/files/2013/11/Tree.jpg" alt="This is a tree" />
-	</section> -->
-
+	<div class="container">
+		<div class="text-center">
+			<h1>Picla</h1>
+			<p>
+				Convert your <span>alt-texts</span> into simple image labels using this jQuery plugin
+			</p>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<img src="http://lamidge.net/wp-content/uploads/2013/07/Enchanting-Small-Yard-Landscape-Ideas.jpg" class="img-responsive picla" data-label-class="label-class" alt="Garden Design"/>
+			</div>
+			<div class="col-md-3">
+				<img src="http://lamidge.net/wp-content/uploads/2013/07/Enchanting-Small-Yard-Landscape-Ideas.jpg" class="img-responsive picla" data-label-class="label-class" data-wrapper-class="wrapper-class" alt="Garden Design"/>
+			</div>
+			<div class="col-md-3">
+				<img src="http://lamidge.net/wp-content/uploads/2013/07/Enchanting-Small-Yard-Landscape-Ideas.jpg" class="img-responsive picla" data-label-class="label-class" data-label-hover alt="Garden Design"/>
+			</div>
+			<div class="col-md-3">
+				<img src="http://lamidge.net/wp-content/uploads/2013/07/Enchanting-Small-Yard-Landscape-Ideas.jpg" class="img-responsive picla" data-label-class="label-class" data-label-hover=".7s" alt="Garden Design"/>
+			</div>
+		</div>
+	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="../src/picla.js"></script>
+	<script src="../build/picla.min.js"></script>
 </body>
 </html>
