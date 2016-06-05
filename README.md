@@ -1,4 +1,5 @@
-![picla](https://raw.githubusercontent.com/ArunMichaelDsouza/picla/master/demo/img/logo.png)
+# picla [![npm version](https://badge.fury.io/js/picla.svg)](https://badge.fury.io/js/picla) [![NPM Downloads](https://img.shields.io/npm/dm/picla.svg?style=flat-square)](https://www.npmjs.com/package/picla) [![Latest Stable Version](https://img.shields.io/bower/v/picla.svg?style=flat-square)](http://bower.io/search/?q=picla)
+jQuery plugin that converts Alt-texts into simple image labels
 
 ### [Demo on CodePen](http://codepen.io/amdsouza92/full/aZOPVZ/)
 
