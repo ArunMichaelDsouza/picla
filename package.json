@@ -1,8 +1,8 @@
 {
   "name": "picla",
-  "version": "0.1.0",
-  "description": "Jquery plugin to add captions or labels to your images ",
-  "main": "index.js",
+  "version": "0.7.4",
+  "description": "jQuery plugin that converts Alt-texts into simple image labels",
+  "main": "build/picla.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

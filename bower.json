@@ -1,0 +1,23 @@
+{
+  "name": "picla",
+  "description": "jQuery plugin that converts Alt-texts into simple image labels",
+  "main": "build/picla.min.js",
+  "authors": [
+    "Arun Michael Dsouza <amdsouza92@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "jquery",
+    "label",
+    "caption",
+    "image"
+  ],
+  "homepage": "https://github.com/ArunMichaelDsouza/picla",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
