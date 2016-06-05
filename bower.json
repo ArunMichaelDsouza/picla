@@ -2,6 +2,7 @@
   "name": "picla",
   "description": "jQuery plugin that converts Alt-texts into simple image labels",
   "main": "build/picla.min.js",
+  "version": "0.7.4",
   "authors": [
     "Arun Michael Dsouza <amdsouza92@gmail.com>"
   ],
