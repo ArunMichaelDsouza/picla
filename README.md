@@ -86,7 +86,7 @@ You can also add in some transition to this effect by passing in a duration
 picla also supports HTML tags within the alt text
 
 ```html
-<img src="/path-to-image" class="picla" alt="More about Garden Design <a href='/link'>here</a> data-label-class="image-label-black"/>
+<img src="/path-to-image" class="picla" alt="More about Garden Design <a href='/link'>here</a>" data-label-class="image-label-black"/>
 ```
 
 <br/>
