@@ -114,7 +114,7 @@
                 });
 
                 // Check for label hover attribute
-                var labelHover = $(imgElement.elem).attr('data-label-hover');
+                var labelHover = $(imgElement.elem).attr('data-label-slideUp');
                 if (labelHover !== undefined) {
                     var duration = '.3s'; // Set default transition duration
 

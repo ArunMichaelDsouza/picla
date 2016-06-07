@@ -69,18 +69,18 @@ Add a CSS class (custom styles) to the image wrapper
 <img src="/path-to-image" class="picla" data-wrapper-class="rounded-image" data-label-class="image-label-black" alt="Garden Design"/>
 ```
 
-#### ``data-label-hover``
+#### ``data-label-slideUp``
 
 Make the label slide up from the bottom when the user hovers over the image wrapper
 
 ```html
-<img src="/path-to-image" class="picla" data-label-hover data-label-class="image-label-black" alt="Garden Design"/>
+<img src="/path-to-image" class="picla" data-label-slideUp data-label-class="image-label-black" alt="Garden Design"/>
 ```
 
 You can also add in some transition to this effect by passing in a duration
 
 ```html
-<img src="/path-to-image" class="picla" data-label-hover="2s" data-label-class="image-label-black" alt="Garden Design"/>
+<img src="/path-to-image" class="picla" data-label-slideUp="2s" data-label-class="image-label-black" alt="Garden Design"/>
 ```
 
 picla also supports HTML tags within the alt text
