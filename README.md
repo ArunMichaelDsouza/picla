@@ -16,7 +16,7 @@ jQuery plugin that converts Alt-texts into simple image labels
 Use picla directly from jsdelivr CDN
 
 ```html
-https://cdn.jsdelivr.net/jquery.picla/0.7.4/picla.min.js
+https://cdn.jsdelivr.net/jquery.picla/0.7.6/picla.min.js
 ```
 
 #### via bower
@@ -39,14 +39,14 @@ Or, [download](https://github.com/ArunMichaelDsouza/picla/releases) the latest v
 
 ## Usage
 
-Just add the class ``picla`` to any image with descriptive ``Alt text`` in order to convert it into a label.
+Just add the class ``picla`` to any image with descriptive ``Alt text`` in order to convert it into a label
 
 ```html
 <img src="/path-to-image" class="picla" alt="Garden Design"/>
 ```
 
-Picla wraps the image within a wrapper and does not add any styles to the created label out of the box. 
-You can use the ``data-label-class`` option to add your custom styles.
+Picla wraps the image within a wrapper and does not add any styles to the created label out of the box.
+You can use the ``data-label-class`` option to add your custom styles
 
 <br/>
 
@@ -77,11 +77,23 @@ Make the label slide up from the bottom when the user hovers over the image wrap
 <img src="/path-to-image" class="picla" data-label-slideUp data-label-class="image-label-black" alt="Garden Design"/>
 ```
 
-You can also add in some transition to this effect by passing in a duration
+You can also add in some transition to this effect by passing in a duration. Default is 300ms
 
 ```html
 <img src="/path-to-image" class="picla" data-label-slideUp="2s" data-label-class="image-label-black" alt="Garden Design"/>
 ```
+
+#### ``data-label-fadeIn``
+
+Make the label fade in when the user hovers over the image wrapper
+
+```html
+<img src="/path-to-image" class="picla" data-label-fadeIn data-label-class="image-label-black" alt="Garden Design"/>
+```
+
+You can add some transition to this effect as well by passing in a duration
+
+<br/>
 
 picla also supports HTML tags within the alt text
 
