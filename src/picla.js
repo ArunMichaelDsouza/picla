@@ -113,13 +113,16 @@
                     'padding': 0
                 });
 
-                // Check for label hover attribute
-                var labelHover = $(imgElement.elem).attr('data-label-slideUp');
-                if (labelHover !== undefined) {
+                // Check for label hover attributes
+                var labelSlideUp = $(imgElement.elem).attr('data-label-slideUp'),
+                    labelFadeIn = $(imgElement.elem).attr('data-label-fadeIn');
+
+                // Trigger label slideUp
+                if (labelSlideUp !== undefined && labelFadeIn == undefined) {
                     var duration = '.3s'; // Set default transition duration
 
-                    if (labelHover !== '') {
-                        duration = labelHover; // Set custom transition duration
+                    if (labelSlideUp !== '') {
+                        duration = labelSlideUp; // Set custom transition duration
                     }
 
                     $(label).css({
@@ -129,10 +132,32 @@
 
                     // Hide/show label on mouseover event
                     $(wrapper).mouseover(function() {
-                        $(label).css('bottom', '0');
+                        $(label).css('bottom', 0);
                     });
                     $(wrapper).mouseout(function() {
                         $(label).css('bottom', '-40%');
+                    });
+                }
+
+                // Trigger label fadeIn
+                if(labelFadeIn !== undefined && labelSlideUp == undefined) {
+                    var duration = '.3s'; // Set default transition duration
+
+                    if(labelFadeIn !== '') {
+                        duration = labelFadeIn; // Set custom transition duration
+                    }
+
+                    $(label).css({
+                        'opacity': 0,
+                        'transition': ' opacity ' + duration + ' ease-in-out '
+                    });
+
+                    // Hide/show label on mouseover event
+                    $(wrapper).mouseover(function() {
+                        $(label).css('opacity', 1);
+                    });
+                    $(wrapper).mouseout(function() {
+                        $(label).css('opacity', 0);
                     });
                 }
 
