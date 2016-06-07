@@ -96,12 +96,6 @@
                     $(label).addClass(labelClass);
                 }
 
-                // Check for wrapper class attribute
-                var wrapperClass = $(imgElement.elem).attr('data-wrapper-class');
-                if (wrapperClass !== '') {
-                    $(wrapper).addClass(wrapperClass);
-                }
-
                 // Create image element to be rendered
                 var img = document.createElement('img');
 

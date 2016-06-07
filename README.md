@@ -61,14 +61,6 @@ Add a CSS class (custom styles) to the label
 
 ```
 
-#### ``data-wrapper-class``
-
-Add a CSS class (custom styles) to the image wrapper
-
-```html
-<img src="/path-to-image" class="picla" data-wrapper-class="rounded-image" data-label-class="image-label-black" alt="Garden Design"/>
-```
-
 #### ``data-label-slideUp``
 
 Make the label slide up from the bottom when the user hovers over the image wrapper
