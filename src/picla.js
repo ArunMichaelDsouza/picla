@@ -121,6 +121,7 @@
 
                     $(label).css({
                         'bottom': '-40%',
+                        'translateY'
                         'transition': 'all ' + duration + ' ease-in-out'
                     });
 
