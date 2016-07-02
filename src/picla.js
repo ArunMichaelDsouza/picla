@@ -120,17 +120,16 @@
                     }
 
                     $(label).css({
-                        'bottom': '-40%',
-                        'translateY'
+                        'transform': 'translateY(100%)',
                         'transition': 'all ' + duration + ' ease-in-out'
                     });
 
                     // Hide/show label on mouseover event
                     $(wrapper).mouseover(function() {
-                        $(label).css('bottom', 0);
+                        $(label).css('transform', 'translateY(0)');
                     });
                     $(wrapper).mouseout(function() {
-                        $(label).css('bottom', '-40%');
+                        $(label).css('transform', 'translateY(100%)');
                     });
                 }
 
