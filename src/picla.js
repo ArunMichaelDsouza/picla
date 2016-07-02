@@ -120,16 +120,32 @@
                     }
 
                     $(label).css({
+                        '-webkit-transform': 'translateY(100%)',
+                        '-moz-transform': 'translateY(100%)',
+                        '-ms-transform': 'translateY(100%)',
+                        '-o-transform': 'translateY(100%)',
                         'transform': 'translateY(100%)',
                         'transition': 'all ' + duration + ' ease-in-out'
                     });
 
                     // Hide/show label on mouseover event
                     $(wrapper).mouseover(function() {
-                        $(label).css('transform', 'translateY(0)');
+                        $(label).css({
+                            '-webkit-transform': 'translateY(0)',
+                            '-moz-transform': 'translateY(0)',
+                            '-ms-transform': 'translateY(0)',
+                            '-o-transform': 'translateY(0)',
+                            'transform': 'translateY(0)'
+                        });
                     });
                     $(wrapper).mouseout(function() {
-                        $(label).css('transform', 'translateY(100%)');
+                        $(label).css({
+                            '-webkit-transform': 'translateY(100%)',
+                            '-moz-transform': 'translateY(100%)',
+                            '-ms-transform': 'translateY(100%)',
+                            '-o-transform': 'translateY(100%)',
+                            'transform': 'translateY(100%)'
+                        });
                     });
                 }
 
