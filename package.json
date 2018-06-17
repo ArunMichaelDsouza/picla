@@ -1,6 +1,6 @@
 {
   "name": "picla",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "jQuery plugin that converts Alt-texts into simple image labels",
   "main": "build/picla.min.js",
   "scripts": {
