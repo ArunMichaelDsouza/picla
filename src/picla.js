@@ -1,11 +1,11 @@
 /*
-    picla v0.8.2
+    picla v0.8.3
     Copyright (c) 2016 Arun Michael Dsouza (amdsouza92@gmail.com)
     Licence: MIT
     Demo on CodePen - http://codepen.io/amdsouza92/full/aZOPVZ/
 */
 
-(function() {
+(function () {
 
     "use strict";
 
@@ -16,13 +16,13 @@
     }
 
     // Function to get class string of current image
-    ImageElement.prototype.getClassString = function() {
+    ImageElement.prototype.getClassString = function () {
 
         // Get array of classes applied to current element
         var classList = $(this.elem).attr('class').split(/\s+/);
 
         // Remove class 'picla' from the array
-        classList = jQuery.grep(classList, function(value) {
+        classList = jQuery.grep(classList, function (value) {
             return value != 'picla';
         });
 
@@ -36,12 +36,12 @@
     };
 
     // Function to get source of current image
-    ImageElement.prototype.getSrc = function() {
+    ImageElement.prototype.getSrc = function () {
         return this.elem.src;
     };
 
     // Function to get parent element of current image
-    ImageElement.prototype.getParent = function() {
+    ImageElement.prototype.getParent = function () {
         return this.elem.parentElement;
     };
 
@@ -52,7 +52,7 @@
     function generateImageLabel(imgElement) {
 
         // Fire interval to check computed width of image
-        var interval = setInterval(function() {
+        var interval = setInterval(function () {
 
             // If its calculated then clear inteval and run process
             if (window.getComputedStyle(imgElement.elem).width !== '0px') {
@@ -129,7 +129,7 @@
                     });
 
                     // Hide/show label on mouseover event
-                    $(wrapper).mouseover(function() {
+                    $(wrapper).mouseover(function () {
                         $(label).css({
                             '-webkit-transform': 'translateY(0)',
                             '-moz-transform': 'translateY(0)',
@@ -138,7 +138,7 @@
                             'transform': 'translateY(0)'
                         });
                     });
-                    $(wrapper).mouseout(function() {
+                    $(wrapper).mouseout(function () {
                         $(label).css({
                             '-webkit-transform': 'translateY(100%)',
                             '-moz-transform': 'translateY(100%)',
@@ -150,10 +150,10 @@
                 }
 
                 // Trigger label fadeIn
-                if(labelFadeIn !== undefined && labelSlideUp == undefined) {
+                if (labelFadeIn !== undefined && labelSlideUp == undefined) {
                     var duration = '.3s'; // Set default transition duration
 
-                    if(labelFadeIn !== '') {
+                    if (labelFadeIn !== '') {
                         duration = labelFadeIn; // Set custom transition duration
                     }
 
@@ -163,10 +163,10 @@
                     });
 
                     // Hide/show label on mouseover event
-                    $(wrapper).mouseover(function() {
+                    $(wrapper).mouseover(function () {
                         $(label).css('opacity', 1);
                     });
-                    $(wrapper).mouseout(function() {
+                    $(wrapper).mouseout(function () {
                         $(label).css('opacity', 0);
                     });
                 }

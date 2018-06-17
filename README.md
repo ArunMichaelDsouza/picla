@@ -1,4 +1,4 @@
-<img src="https://github.com/ArunMichaelDsouza/picla/raw/master/icon.png" width="300" height="auto" alt="picla icon"/>
+<img src="https://github.com/ArunMichaelDsouza/picla/raw/master/icon.png" width="250" height="auto" alt="picla icon"/>
 
 #  [![npm version](https://badge.fury.io/js/picla.svg)](https://badge.fury.io/js/picla) [![NPM Downloads](https://img.shields.io/npm/dm/picla.svg?style=flat-square)](https://www.npmjs.com/package/picla) [![Latest Stable Version](https://img.shields.io/bower/v/picla.svg?style=flat-square)](http://bower.io/search/?q=picla)
 jQuery plugin that converts Alt-texts into simple image labels
@@ -18,7 +18,7 @@ jQuery plugin that converts Alt-texts into simple image labels
 Use picla directly from jsdelivr CDN
 
 ```html
-https://cdn.jsdelivr.net/jquery.picla/0.8.2/picla.min.js
+https://cdn.jsdelivr.net/jquery.picla/0.8.3/picla.min.js
 ```
 
 #### via bower
