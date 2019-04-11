@@ -18,7 +18,7 @@ jQuery plugin that converts Alt-texts into simple image labels
 Use picla directly from jsdelivr CDN
 
 ```html
-https://cdn.jsdelivr.net/jquery.picla/0.8.4/picla.min.js
+https://cdn.jsdelivr.net/npm/picla@0.8.5/build/picla.min.js
 ```
 
 #### via bower
