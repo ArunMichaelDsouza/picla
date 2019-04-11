@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Picla - jQuery plugin that converts Alt-texts into simple image labels</title>
 	<meta charset="UTF-8">
@@ -14,19 +15,23 @@
 		.container {
 			text-align: center;
 		}
+
 		.label-class {
-			background-color: rgba(0,0,0,.75);
+			background-color: rgba(0, 0, 0, .75);
 			color: #fff;
 			padding: 10px;
 			text-align: center;
 		}
+
 		.wrapper-class {
 			border-radius: 20px;
-			box-shadow: 2px 2px 2px rgba(0,0,0,.35);
+			box-shadow: 2px 2px 2px rgba(0, 0, 0, .35);
 		}
+
 		img {
 			margin-bottom: 10px;
 		}
+
 		h1 {
 			margin: 20px 0;
 			font-family: 'Pacifico', cursive;
@@ -35,14 +40,17 @@
 			text-shadow: 1px 1px 1px #C43730;
 			font-weight: 400;
 		}
+
 		.main-header {
 			margin-top: 40px;
 			font-size: 4.5em;
 		}
+
 		h3 {
 			margin-top: 40px;
 			color: #DE535B;
 		}
+
 		pre {
 			background-color: #ddd;
 			color: #444;
@@ -53,74 +61,95 @@
 			margin: 0 auto 20px;
 			white-space: nowrap;
 		}
+
 		p {
 			font-weight: 300;
 			color: #999;
 			font-size: 1.5em;
 			margin: 0 0 50px;
 		}
+
 		.text {
 			margin-bottom: 10px;
 			font-size: 1.15em;
 		}
-		p > span {
+
+		p>span {
 			color: #DE535B;
 			font-weight: 400;
 			font-size: .95em;
 		}
+
 		h4 {
 			margin: 4px 0;
 			color: #50a4e2;
 		}
+
 		.example-label {
 			color: #777;
 			margin-bottom: 10px;
 			height: 40px;
 		}
+
 		.github-ribbon {
-		  position: fixed; 
-		  z-index: 1000; 
-		  top: 0; 
-		  right: 0; 
-		  border: 0;
+			position: fixed;
+			z-index: 1000;
+			top: 0;
+			right: 0;
+			border: 0;
 		}
+
 		.main-text {
 			margin-bottom: 20px;
 		}
+
 		.license {
 			width: 50%;
 			margin: 0 auto;
 		}
+
 		@media screen and (max-width: 767px) {
-			pre, .license {
+
+			pre,
+			.license {
 				width: 90%;
 			}
 		}
+
 		@media screen and (max-width: 480px) {
-			pre, .license {
+
+			pre,
+			.license {
 				width: 100%;
 			}
 		}
+
 		.foot-text {
 			color: #DE535B;
 			margin-top: 30px;
 		}
 	</style>
 	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-	  ga('create', 'UA-78827504-1', 'auto');
-	  ga('send', 'pageview');
+		ga('create', 'UA-78827504-1', 'auto');
+		ga('send', 'pageview');
 	</script>
 </head>
+
 <body>
 
 	<a href="https://github.com/ArunMichaelDsouza/picla">
-      <img class="github-ribbon" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
-    </a>
+		<img class="github-ribbon"
+			src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
+			alt="Fork me on GitHub"
+			data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+	</a>
 
 	<div class="container">
 		<div class="text-center">
@@ -129,63 +158,75 @@
 				jQuery plugin that converts <span>Alt-texts</span> into simple image labels
 			</p>
 			<a class="version-badge npm-badge" href="https://badge.fury.io/js/picla">
-			  <img src="https://badge.fury.io/js/picla.svg" alt="npm version"></a> 
-			  <a class="version-badge" href="https://www.npmjs.com/package/picla">
-			  <img src="https://img.shields.io/npm/dm/picla.svg?style=flat-square" alt="NPM Downloads"></a> 
-			  <a class="version-badge" href="http://bower.io/search/?q=picla"><img src="https://img.shields.io/bower/v/picla.svg?style=flat-square" alt="Latest Stable Version">
-			 </a>
+				<img src="https://badge.fury.io/js/picla.svg" alt="npm version"></a>
+			<a class="version-badge" href="https://www.npmjs.com/package/picla">
+				<img src="https://img.shields.io/npm/dm/picla.svg?style=flat-square" alt="NPM Downloads"></a>
+			<a class="version-badge" href="http://bower.io/search/?q=picla"><img
+					src="https://img.shields.io/bower/v/picla.svg?style=flat-square" alt="Latest Stable Version">
+			</a>
+			<span class="badge-patreon"><a href="https://www.patreon.com/arunmichaeldsouza"
+					title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-blue.svg"
+						alt="Patreon donate button" /></a></span>
 		</div>
 		<div class="row" style="margin-top: 40px;">
 			<div class="col-md-3">
-				<img src="img/garden.jpg" class="img-responsive picla" data-label-class="label-class" alt="Garden Design"/>
+				<img src="img/garden.jpg" class="img-responsive picla" data-label-class="label-class" alt="Garden Design" />
 				<div class="example-label">
 					Label with custom CSS
 				</div>
 			</div>
 			<div class="col-md-3">
-				<img src="img/garden.jpg" class="img-responsive picla wrapper-class" data-label-class="label-class" alt="Garden Design"/>
+				<img src="img/garden.jpg" class="img-responsive picla wrapper-class" data-label-class="label-class"
+					alt="Garden Design" />
 				<div class="example-label">
 					Label and image wrapper with custom CSS
 				</div>
 			</div>
 			<div class="col-md-3">
-				<img src="img/garden.jpg" class="img-responsive picla" data-label-class="label-class" data-label-slideUp alt="Garden Design"/>
+				<img src="img/garden.jpg" class="img-responsive picla" data-label-class="label-class" data-label-slideUp
+					alt="Garden Design" />
 				<div class="example-label">
 					Slide up label on hover
 				</div>
 			</div>
 			<div class="col-md-3">
-				<img src="img/garden.jpg" class="img-responsive picla" data-label-class="label-class" data-label-slideUp=".7s" alt="Garden Design"/>
+				<img src="img/garden.jpg" class="img-responsive picla" data-label-class="label-class" data-label-slideUp=".7s"
+					alt="Garden Design" />
 				<div class="example-label">
 					Slide up label on hover with transition
 				</div>
 			</div>
 			<div class="col-md-3">
-				<img src="img/garden.jpg" class="img-responsive picla" data-label-class="label-class" alt="Garden Design. Read more <a target='_blank' href='https://en.wikipedia.org/wiki/Garden_design'>here</a>."/>
+				<img src="img/garden.jpg" class="img-responsive picla" data-label-class="label-class"
+					alt="Garden Design. Read more <a target='_blank' href='https://en.wikipedia.org/wiki/Garden_design'>here</a>." />
 				<div class="example-label">
 					Label with HTML
 				</div>
 			</div>
 			<div class="col-md-3">
-				<img src="img/garden.jpg" class="img-responsive picla" data-label-class="label-class" data-label-slideUp=".5s" alt="Garden Design. Read more <a target='_blank' href='https://en.wikipedia.org/wiki/Garden_design'>here</a>."/>
+				<img src="img/garden.jpg" class="img-responsive picla" data-label-class="label-class" data-label-slideUp=".5s"
+					alt="Garden Design. Read more <a target='_blank' href='https://en.wikipedia.org/wiki/Garden_design'>here</a>." />
 				<div class="example-label">
 					Slide up label with HTML on hover
 				</div>
 			</div>
 			<div class="col-md-3">
-				<img src="img/garden.jpg" class="img-responsive picla" data-label-class="label-class" data-label-fadeIn alt="Garden Design"/>
+				<img src="img/garden.jpg" class="img-responsive picla" data-label-class="label-class" data-label-fadeIn
+					alt="Garden Design" />
 				<div class="example-label">
 					Fade in label on hover
 				</div>
 			</div>
 			<div class="col-md-3">
-				<img src="img/garden.jpg" class="img-responsive picla" data-label-class="label-class" data-label-fadeIn alt="Garden Design. Read more <a target='_blank' href='https://en.wikipedia.org/wiki/Garden_design'>here</a>."/>
+				<img src="img/garden.jpg" class="img-responsive picla" data-label-class="label-class" data-label-fadeIn
+					alt="Garden Design. Read more <a target='_blank' href='https://en.wikipedia.org/wiki/Garden_design'>here</a>." />
 				<div class="example-label">
 					Fade in label with HTML on hover
 				</div>
 			</div>
 			<div class="col-md-3">
-				<img src="img/garden.jpg" class="img-responsive picla" data-label-class="label-class" data-label-slideUp=".5s" alt="I love my <em>Garden</em>. <h4>Oh Yeah!</h4>"/>
+				<img src="img/garden.jpg" class="img-responsive picla" data-label-class="label-class" data-label-slideUp=".5s"
+					alt="I love my <em>Garden</em>. <h4>Oh Yeah!</h4>" />
 				<div class="example-label">
 					More HTML on hover..
 				</div>
@@ -213,20 +254,22 @@
 			npm install picla
 		</pre>
 		<p class="text">
-			Or, <a href="https://github.com/ArunMichaelDsouza/picla/releases">download</a> the latest version and include <span>picla.min.js</span> to your project.
+			Or, <a href="https://github.com/ArunMichaelDsouza/picla/releases">download</a> the latest version and include
+			<span>picla.min.js</span> to your project.
 		</p>
 	</div>
 	<div class="container">
 		<h1>Usage</h1>
 		<p class="text">
-			Just add the class <span>picla</span> to any image with descriptive <span>Alt text</span> in order to convert it into a label
+			Just add the class <span>picla</span> to any image with descriptive <span>Alt text</span> in order to convert it
+			into a label
 		</p>
 		<pre>
 			&lt;img src="/path-to-image" class="picla" alt="Garden Design"/&gt;
 		</pre>
 		<p class="text">
 			Picla wraps the image within a wrapper and does not add any styles to the created label out of the box.
-			<br/>
+			<br />
 			You can use the <span>data-label-class</span> option to add your custom styles
 		</p>
 	</div>
@@ -234,7 +277,7 @@
 		<h1>Options</h1>
 		<h3>data-label-class</h3>
 		<p class="text">
-			Add a CSS class (custom styles) to the label 
+			Add a CSS class (custom styles) to the label
 		</p>
 		<pre>
 			&lt;img src="/path-to-image" class="picla" data-label-class="image-label-black" alt="Garden Design"/&gt;
@@ -262,7 +305,7 @@
 		<p class="text">
 			You can add some transition to this effect as well by passing in a duration
 		</p>
-		<br/>
+		<br />
 		<p class="text">
 			picla also supports HTML within the alt text
 		</p>
@@ -271,16 +314,34 @@
 		</pre>
 	</div>
 	<div class="container">
+		<h1>Support</h1>
+		<p class="text support">
+			If you'd like to help support the development of the project, please consider backing me on Patreon -
+			<br /><br />
+			<a href="https://www.patreon.com/bePatron?u=8841116" target="_blank">
+				<img src="https://arunmichaeldsouza.com/img/patreon.png" width="180px;" />
+			</a>
+		</p>
+	</div>
+	<div class="container">
 		<h1>License</h1>
 		<h3>MIT Licensed</h3>
 		<p class="text license">
 			Copyright (c) 2016 Arun Michael Dsouza (<a href="mailto:amdsouza92@gmail.com">amdsouza92@gmail.com</a>)
-			<br/><br/>
-			Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-			<br/><br/>
-			The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-			<br/><br/>
-			THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+			<br /><br />
+			Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+			documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+			the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and
+			to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+			<br /><br />
+			The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+			the Software.
+			<br /><br />
+			THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+			THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+			AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+			CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+			IN THE SOFTWARE.
 		</p>
 	</div>
 	<p class="text text-center foot-text">
@@ -289,4 +350,5 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="js/picla.min.js"></script>
 </body>
+
 </html>
