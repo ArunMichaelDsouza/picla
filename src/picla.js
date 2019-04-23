@@ -5,7 +5,7 @@
     Demo on CodePen - http://codepen.io/amdsouza92/full/aZOPVZ/
 */
 
-(function () {
+(function ($) {
 
     "use strict";
 
@@ -22,7 +22,7 @@
         var classList = $(this.elem).attr('class').split(/\s+/);
 
         // Remove class 'picla' from the array
-        classList = jQuery.grep(classList, function (value) {
+        classList = $.grep(classList, function (value) {
             return value != 'picla';
         });
 
@@ -190,4 +190,4 @@
         // Genrate image labels for all elements
         generateImageLabel(imgElement);
     }
-})();
+})(window.jQuery || window.$);
