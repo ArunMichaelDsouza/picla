@@ -1,5 +1,5 @@
 /*
-    picla v0.8.8
+    picla v0.8.9
     Copyright (c) 2016 Arun Michael Dsouza (amdsouza92@gmail.com)
     Licence: MIT
     Demo on CodePen - http://codepen.io/amdsouza92/full/aZOPVZ/
